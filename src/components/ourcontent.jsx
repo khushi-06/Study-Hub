@@ -3,6 +3,12 @@ import Card from 'react-bootstrap/Card';
 const TextExample=() =>{
   return (
     <div className='ourcontet'>
+
+    <div className='bar'>
+      <div className='headline'>
+        OUR CONTENT
+      </div>
+    </div>
     <div className='card1'>
     <Card style={{ width: '18rem' }}>
       <Card.Body>

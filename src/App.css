@@ -107,11 +107,28 @@ li{
 }
 
 
-footer{
-    display: flex;
-    list-style: none;
-    position: relative;
-    align-items: left;
+.footer{
     background-color: #FFD700;
     height: 4rem;
+}
+
+.bar{
+    background-color: #FFD700;
+    width: 223.792px;
+    height: 56px;
+    position: absolute;
+    top: 585px;   /* Y-coordinate position */
+    left: 605.55px;  /* X-coordinate position */
+    border-radius: 15px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    z-index: -1;
+}
+
+.headline{
+    position: absolute;
+    top: 14px;   /* Y-coordinate position */
+    left: 53px;  /* X-coordinate position */
+    z-index: 1; 
+    font-size: large;
+    font-weight: 500;
 }
