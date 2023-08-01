@@ -12,8 +12,6 @@ const App=() =>{
       <Navigation/>
       <Herosection/>
       <Ourcontent/>
-      {/* <Footer/> */}
-      {/* <ExampleCarouselImage/> */}
       </div>
   );
 }
