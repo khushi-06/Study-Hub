@@ -1,38 +1,117 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+
+.navbar{
+    display: flex;
+    list-style: none;
+    position: relative;
+    align-items: left;
+    background-color: #FFD700;
+    height: 4rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.item{
+    display: flex;
+    flex-direction:row-reverse;
+    list-style: none;
+    position: relative;
+    align-items: left;
+    font-size: x-small;
+}
+li{
+    margin: 0.2rem;
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+    position:relative;
+    align-content: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* .icon{
+    margin: 0.5rem;
+    padding-left: 0.6rem;
+    padding-bottom: 0.5rem;
+} */
+
+.icons{
+    margin: 0.5rem;
+    height: 3.3rem;
+    width: 3.3rem;
 }
 
-.App-link {
-  color: #61dafb;
+.img1{
+    position: absolute;
+    top: 170px;   /* Y-coordinate position */
+    left: 336px;  /* X-coordinate position */
+}
+.img2{
+    position: absolute;
+    top: 247.71px;   /* Y-coordinate position */
+    left: 489.87px;  /* X-coordinate position */
+}
+.img3{
+    position: absolute;
+    top: 170px;   /* Y-coordinate position */
+    left: 681.03px;  /* X-coordinate position */
+}
+.img4{
+    position: absolute;
+    top: 240.72px;   /* Y-coordinate position */
+    left: 855.1px;  /* X-coordinate position */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.content{
+    font-size: 48px;
+    font-style: bold;
+    font-weight: 600;
+    position: absolute;
+    top: 241.05px;   /* Y-coordinate position */
+    left: 408.85px;  /* X-coordinate position */
+
+}
+
+.card1{
+    position: absolute;
+    top: 708px;   /* Y-coordinate position */
+    left: 134px;  /* X-coordinate position */
+    box-shadow: #FFD700;
+    border-radius: 25px;
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(255, 215, 0, 0.53);
+}
+
+.card2{
+    position: absolute;
+    top: 708px;   /* Y-coordinate position */
+    left: 569px;  /* X-coordinate position */
+    box-shadow: #FFD700;
+    border-radius: 25px;
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(255, 215, 0, 0.53);
+}
+
+.card3{
+    position: absolute;
+    top: 708px;   /* Y-coordinate position */
+    left: 1004px;  /* X-coordinate position */
+    box-shadow: #FFD700;
+    border-radius: 25px;
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(255, 215, 0, 0.53);
+}
+
+
+footer{
+    display: flex;
+    list-style: none;
+    position: relative;
+    align-items: left;
+    background-color: #FFD700;
+    height: 4rem;
 }
