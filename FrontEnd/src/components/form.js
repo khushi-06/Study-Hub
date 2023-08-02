@@ -3,8 +3,8 @@ export default function Form() {
 
 // States for registration
 const [name, setName] = useState('');
-// const [Department, setDepartment] = useState('');
-// const [PhoneNumber, Phone-Number] = useState('');
+const [department, setDepartment] = useState('');
+const [phoneNumber, setPhoneNumber] = useState('');
 
 const [email, setEmail] = useState('');
 const [password, setPassword] = useState('');
@@ -18,6 +18,17 @@ const handleName = (e) => {
 setName(e.target.value);
 setSubmitted(false);
 };
+
+// Handling the Department change
+const handleDepartment = (e) => {
+    setDepartment(e.target.value);
+    setSubmitted(false);
+}
+// Handling the PhoneNumber change
+const handlePhoneNumber = (e) => {
+    setPhoneNumber(e.target.value);
+    setSubmitted(false);
+}
 
 // Handling the email change
 const handleEmail = (e) => {
@@ -34,7 +45,7 @@ setSubmitted(false);
 // Handling the form submission
 const handleSubmit = (e) => {
 e.preventDefault();
-if (name === '' || email === '' || password === '') {
+if (name === '' || department === '' || phoneNumber === '' || email === '' || password === '') {
 setError(true);
 } else {
 setSubmitted(true);
@@ -84,13 +95,13 @@ return (
 <input onChange={handleName} className="input"
 value={name} type="text" />
 
-{/* <label className="label">Department</label>
-<input onChange={handleName} className="input"
-value={Department} type="text" />
+ <label className="label">Department</label>
+<input onChange={handleDepartment} className="input"
+value={department} type="text" />
 
 <label className="label">Phone Number</label>
-<input onChange={handleName} className="input"
-value={PhoneNumber} type="text" /> */}
+<input onChange={handlePhoneNumber} className="input"
+value={phoneNumber} type="text" /> 
 
 <label className="label">Email</label>
 <input onChange={handleEmail} className="input"
