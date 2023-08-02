@@ -135,13 +135,15 @@ li{
 
 .loginbox{
     background-color: white;
-    width: 1074.97px;
-    height: 506px;
+    width: 1224.97px;
+    height: 526px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     position: absolute;
-    top: 1214px;   /* Y-coordinate position */
-    left: 223px;  /* X-coordinate position */
-    box-shadow: 0px 4px 4px 0px rgba(255, 215, 0, 0.53);
+    top: 20vh;   /* Y-coordinate position */
+    left: 22vh;  /* X-coordinate position */
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
+    align-items: center;
+    justify-items: center;
 }
 
 .tag{
@@ -174,8 +176,9 @@ li{
     
     .input{
     font-size: larger;
+    width: 67vh;
     padding: 3px;
-    margin: 2px;
+    margin: 7px;
     border-radius: 33px;
     border: 0px solid #000;
     background: #FFF;
@@ -205,10 +208,9 @@ li{
     
     .error{
     display: block;
-    background-color: red;
     color: white;
     width: fit-content;
-    height: 50px;
+    height: 12px;
     padding: 5px;
     }
     
@@ -234,7 +236,7 @@ form{
     font-size: small;
     font-weight: 200;
     position: absolute;
-    bottom: 1rem;
+    bottom: 4rem;
     left: 3rem;
 }
 
@@ -242,8 +244,61 @@ form{
     font-size: small;
     font-weight: 300;
     position: absolute;
-    bottom: 1rem;
+    bottom: 4rem;
     left: 14rem;
     color: #FFD700;
     
 }
+
+::placeholder {
+    color: #505050; 
+    font-weight: 100px;
+    font-size: small;
+    align-content: center;
+    justify-self: center;
+    position: absolute;
+    font-family: 'Poppins', sans-serif;
+    left: 1vh;
+    
+
+  }
+
+  .btn-login{
+        color: white;
+        background-color: #FFD700;
+        border: 0px solid #000;
+        font-size: larger;
+    
+        display: block;
+        padding: 5px;
+        margin: 10px auto;
+        width: 212px;
+        height: 43px;
+        position: absolute;
+        left:0rem;
+        top: 12rem;
+    }
+
+    .signin-alert1{
+        font-size: small;
+        font-weight: 300;
+        position: absolute;
+        bottom: 7rem;
+        left: 7.5rem;
+        color: #FFD700;
+        
+    }
+
+    .login-alert1{
+        font-size: small;
+        font-weight: 200;
+        position: absolute;
+        bottom: 7rem;
+        left: 3rem;
+    }
+  
+    .fill-alert{
+        font-weight: 300;
+        font-size:medium;
+        color: red;
+    }

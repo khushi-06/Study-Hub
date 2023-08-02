@@ -26,7 +26,10 @@ import './App.css';
 import Navigation from './components/navigation'; 
 import Herosection from './components/herosection';
 import Ourcontent from './components/ourcontent';
+import Register from './components/register';
 import Login from './components/login';
+
+
 
 
 
@@ -35,8 +38,9 @@ const App=() =>{
   return(
       <div>
       <Navigation/>
-      <Herosection/>
-      <Ourcontent/>
+      {/* <Herosection/> */}
+      {/* <Ourcontent/> */}
+      {/* <Register/> */}
       <Login/>
       </div>
   );
