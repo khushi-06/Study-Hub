@@ -136,7 +136,7 @@ li{
 .loginbox{
     background-color: white;
     width: 1074.97px;
-    height: 406px;
+    height: 506px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     position: absolute;
     top: 1214px;   /* Y-coordinate position */
@@ -158,8 +158,92 @@ li{
     
 }
 
-.inputs{
+
+
+.App {
+    text-align: center;
+    background-color:white;
+    }
+    
+    .label{
+    display: block;
+    font-size: medium;
+    color: black;
+    padding: 5px;
+    }
+    
+    .input{
+    font-size: larger;
+    padding: 3px;
+    margin: 2px;
+    border-radius: 33px;
+    border: 0px solid #000;
+    background: #FFF;
+    box-shadow: 0px 4px 7px 0px rgba(0, 0, 0, 0.25);
+        
+    }
+    .btn{
+    color: white;
+    background-color: #FFD700;
+    border: 0px solid #000;
+    font-size: larger;
+
+    display: block;
+    padding: 5px;
+    margin: 10px auto;
+    width: 212px;
+    height: 43px;
     position: absolute;
-    top: 100px;
-    left:100px;
+    left:0rem;
+    top: 16rem;
+    }
+    
+    .messages{
+    display: flex;
+    justify-content: center;
+    }
+    
+    .error{
+    display: block;
+    background-color: red;
+    color: white;
+    width: fit-content;
+    height: 50px;
+    padding: 5px;
+    }
+    
+    .success{
+    display: block;
+    background-color: lightblue;
+    color: black;
+    width: fit-content;
+    height: 50px;
+    padding: 5px;
+    }
+
+form{
+
+    position: absolute;
+    top: 8rem;
+    left:0.1rem;
+    width:67rem;
+    left: 50px; 
+}
+
+.login-alert{
+    font-size: small;
+    font-weight: 200;
+    position: absolute;
+    bottom: 1rem;
+    left: 3rem;
+}
+
+.signin-alert{
+    font-size: small;
+    font-weight: 300;
+    position: absolute;
+    bottom: 1rem;
+    left: 14rem;
+    color: #FFD700;
+    
 }
