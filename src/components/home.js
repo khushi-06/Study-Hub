@@ -1,11 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
 import Navigation from './components/navigation'; 
 import Herosection from './components/herosection';
 import Ourcontent from './components/ourcontent';
 
 
-const App=() =>{
+const Home=() =>{
 
   return(
       <div>
@@ -16,4 +15,4 @@ const App=() =>{
   );
 }
 
-export default App;
+export default Home;

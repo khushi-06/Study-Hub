@@ -3,8 +3,8 @@ export default function Form() {
 
 // States for registration
 const [name, setName] = useState('');
-// const [Department, setDepartment] = useState('');
-// const [PhoneNumber, Phone-Number] = useState('');
+// const [department, setDepartment] = useState('');
+// const [phoneNumber, SetPhoneNumber] = useState('');
 
 const [email, setEmail] = useState('');
 const [password, setPassword] = useState('');
