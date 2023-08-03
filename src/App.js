@@ -39,9 +39,9 @@ const App=() =>{
       <div>
       <Navigation/>
       {/* <Herosection/> */}
-      {/* <Ourcontent/> */}
+      <Ourcontent/>
       {/* <Register/> */}
-      <Login/>
+      {/* <Login/> */}
       </div>
   );
 }
