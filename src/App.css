@@ -78,18 +78,60 @@ li{
 
 .card1{
     position: absolute;
-    top: 708px;   /* Y-coordinate position */
-    left: 134px;  /* X-coordinate position */
+    top: 704px;   /* Y-coordinate position */
+    left: 92px;  /* X-coordinate position */
+    width: 588px;
+    height: 367px;
     box-shadow: #FFD700;
     border-radius: 25px;
-    background: #FFF;
+    background: white;
     box-shadow: 0px 4px 4px 0px rgba(255, 215, 0, 0.53);
 }
+
+.list1{
+    position: relative;
+    left: 6vh;
+    top: 8vh;
+    width: 250px;
+    height: 159px;
+    word-wrap: break-word;
+    font-size: medium;
+    font-weight: 300;
+}
+.list2{
+    position: relative;
+    width: 250px;
+    height: 159px;
+    left: 44vh;
+    top: -13.8vh;
+    word-wrap: break-word;
+    font-size: medium;
+    font-weight: 300;
+}
+
+.card-title{
+    font-size:5vh;
+    position: relative;
+    left:7.4vh;
+    top:4vh;
+}
+
+hr{
+    position: absolute;
+    left: 7.4vh;
+    top: 11vh;
+    width: 45vh;
+    background-color: #FFD700;
+    
+}
+
 
 .card2{
     position: absolute;
     top: 708px;   /* Y-coordinate position */
-    left: 569px;  /* X-coordinate position */
+    left: 759px;  /* X-coordinate position */
+    width: 588px;
+    height: 367px;
     box-shadow: #FFD700;
     border-radius: 25px;
     background: #FFF;
@@ -98,12 +140,31 @@ li{
 
 .card3{
     position: absolute;
-    top: 708px;   /* Y-coordinate position */
-    left: 1004px;  /* X-coordinate position */
+    top: 1156px;   /* Y-coordinate position */
+    left: 92px;  /* X-coordinate position */
+    width: 588px;
+    height: 367px;
     box-shadow: #FFD700;
     border-radius: 25px;
     background: #FFF;
     box-shadow: 0px 4px 4px 0px rgba(255, 215, 0, 0.53);
+}
+
+
+.card4{
+    position: absolute;
+    top: 1156px;   /* Y-coordinate position */
+    left: 759px;  /* X-coordinate position */
+    width: 588px;
+    height: 367px;
+    box-shadow: #FFD700;
+    border-radius: 25px;
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(255, 215, 0, 0.53);
+}
+
+li{
+    list-style:lower-roman;
 }
 
 
@@ -118,7 +179,7 @@ li{
     height: 56px;
     position: absolute;
     top: 585px;   /* Y-coordinate position */
-    left: 605.55px;  /* X-coordinate position */
+    left: 655.55px;  /* X-coordinate position */
     border-radius: 15px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     z-index: -1;
