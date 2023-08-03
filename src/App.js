@@ -43,7 +43,7 @@ const App=() =>{
       {/* <Ourcontent/> */}
       {/* <Register/> */}
       {/* <Login/> */}
-      <Main/>
+      {/* <Main/> */}
       </div>
   );
 }
