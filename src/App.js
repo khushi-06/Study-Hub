@@ -28,6 +28,7 @@ import Herosection from './components/herosection';
 import Ourcontent from './components/ourcontent';
 import Register from './components/register';
 import Login from './components/login';
+import Main from './components/main';
 
 
 
@@ -41,7 +42,7 @@ const App=() =>{
       {/* <Herosection/> */}
       <Ourcontent/>
       {/* <Register/> */}
-      {/* <Login/> */}
+      <Login/>
       </div>
   );
 }
