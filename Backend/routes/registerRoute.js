@@ -3,7 +3,7 @@ const router = express.Router();
 const User = require('../models/user');
 const { body, validationResult } = require('express-validator');
 const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
+
 
 router.post('/register',
   body('username').isLength({ min: 3, max: 20 }),
