@@ -24,11 +24,11 @@
 
 import './App.css';
 import Navigation from './components/navigation'; 
-import Herosection from './components/herosection';
+// import Herosection from './components/herosection';
 import Ourcontent from './components/ourcontent';
-import Register from './components/register';
+// import Register from './components/register';
 import Login from './components/login';
-import Main from './components/main';
+// import Main from './components/main';
 
 
 
