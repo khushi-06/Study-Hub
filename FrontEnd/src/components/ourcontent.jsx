@@ -10,17 +10,10 @@ const TextExample=() =>{
       </div>
     </div>
     <div className='card1'>
-<<<<<<< HEAD
-    <Card style={{ width: '18rem' }}>
-      <Card.Body>
-        <Card.Title>  FIRST YEAR</Card.Title>
-        <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
-=======
     <Card>
       <Card.Body >
         <Card.Title className='card-title'>FIRST YEAR</Card.Title>
         <hr size="4" width="100%" color="yellow" /> 
->>>>>>> NikhilPal002-Backend
         <Card.Text>
           <div className='list1'>
           <li>Physics</li>
