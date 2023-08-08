@@ -1,38 +1,50 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/user');
-const { body, validationResult } = require('express-validator');
 const bcrypt = require("bcrypt");
 
 
 router.post('/register',
-  body('username').isLength({ min: 3, max: 20 }),
-  body('phoneNumber').isLength({ min: 10, max: 10 }),
-  body('email').isEmail().normalizeEmail(),
-  body('password').isLength({ min: 8 }
-  ), async (req, res) => {
+  async (req, res, next) => {
     try {
-      const result = validationResult(req);
-      if (!result.isEmpty()) {
-        return res.status(422).json({ errors: result.array() });
+      const { name, department, phoneNumber, email, password, cpassword } = req.body;
+
+      if (!name || !department || !phoneNumber || !email || !password || !cpassword) {
+        return next(new Error("All fields are mandatory"));
       }
-      let newuser = await User.findOne({ email: req.body.email });
-      if (newuser) {
+
+      if (password !== cpassword) {
+        return next(new Error("Password and Confirm Password not matching"));
+      }
+
+      let userExists = await User.findOne({ email: email });
+      if (userExists) {
         return res.status(400).send('User with this email already exists');
       }
-      const hashedPassword = await bcrypt.hash(req.body.password, 10);
       const newUser = new User({
-        username: req.body.username,
-        phoneNumber: req.body.phoneNumber,
-        email: req.body.email,
-        password: hashedPassword,
+        name,
+        department,
+        phoneNumber,
+        email,
+        password,
+        cpassword,
       });
 
-      const savedUser = await newUser.save();
-      res.status(201).send({
-        message: `${req.body.username} Registered Successfully`,
-        result: savedUser,
-      });
+      try {
+        const savedUser = await newUser.save();
+        res.status(201).send({
+          message: `${req.body.name} Registered Successfully`,
+          result: savedUser,
+        });
+      } catch (err) {
+        if (err.code === 11000 && err.keyPattern.phoneNumber) {
+          // Duplicate phoneNumber
+          res.status(400).json({ error: 'Phone number already in use' });
+        } else {
+          // Other errors
+          res.status(500).json({ error: 'An error occurred' });
+        }
+      }
     }
     catch (err) {
       console.error('Error saving user:', err);

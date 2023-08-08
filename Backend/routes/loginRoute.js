@@ -1,48 +1,46 @@
 const express = require('express');
-const router = express.Router();
-const User = require('../models/user');
-const { body } = require('express-validator');
+const router = new express.Router();
+const Users = require('../models/user');
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
-require('dotenv').config();
-
-const JWT_SECRET = process.env.JWT_SECRET;
-
 
 router.post('/login',
-  body('email').isEmail().normalizeEmail(),
-  body('password', 'Password cannot be blank').exists()
-  , async (req, res) => {
+  async (req, res) => {
 
-    const { email, password } = req.body;
     try {
-      const user = await User.findOne({ email });
-      if (!user) {
-        return res.status(404).send({
+      const { email, password } = req.body;
+
+      if (!email || !password) {
+        return res.status(400).json({ error: "Plz Filled the data" });
+      }
+
+      const checkUser = await Users.findOne({ email });
+      if (!checkUser) {
+        return res.status(404).json({
           message: "No user exist with this email",
         });
       }
 
-      const passwordCheck = await bcrypt.compare(password, user.password)
-      if (!passwordCheck) {
-        return res.status(400).send({
-          message: "Invalid Credentials! Please try again with correct credentials", error
+      const checkPassword = await bcrypt.compare(password, checkUser.password)
+      if (!checkPassword) {
+        return res.status(400).json({
+          message: "Invalid Credentials! Please try again with correct credentials"
         });
       }
 
       // create jwt token
-      const data = {
-        user: {
-          userId: user.id,
-          userEmail: user.email,
-        }
-      }
-      const authtoken = jwt.sign(data, JWT_SECRET);
+      const token = await checkUser.generateAuthToken();
+      console.log(`the token part ${token}`);
 
-      res.status(200).send({
+      res.status(201).cookie("jwt", token, {
+        expires: new Date(Date.now() + 1800000),
+        httpOnly: true,
+        // secure:true
+      });
+
+      res.status(201).send({
         message: "Login Successful",
-        user,
-        token: authtoken,
+        token: token,
       });
     }
     catch (error) {
