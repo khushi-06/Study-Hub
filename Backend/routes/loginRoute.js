@@ -32,13 +32,13 @@ router.post('/login',
       const token = await checkUser.generateAuthToken();
       console.log(`the token part ${token}`);
 
-      res.status(201).cookie("jwt", token, {
+      res.cookie("jwt", token, {
         expires: new Date(Date.now() + 1800000),
         httpOnly: true,
         // secure:true
       });
 
-      res.status(201).send({
+      res.status(200).json({
         message: "Login Successful",
         token: token,
       });

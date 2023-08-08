@@ -1,121 +1,128 @@
 import { useState } from 'react';
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
+
+
 export default function Form() {
 
-// States for registration
-const [name, setName] = useState('');
-const [department, setDepartment] = useState('');
-const [phoneNumber, setPhoneNumber] = useState('');
+    const navigate = useNavigate();
 
+    // States for registration
+    const [user, setUser] = useState({
+        name: "",
+        department: "",
+        phoneNumber: "",
+        email: "",
+        password: "",
+        cpassword: "",
+    });
 
-const [email, setEmail] = useState('');
-const [password, setPassword] = useState('');
+    let name, value;
 
-// States for checking the errors
-const [submitted, setSubmitted] = useState(false);
-const [error, setError] = useState(false);
+    // Handling the input changes
+    const handleInputs = (e) => {
+        name = e.target.name;
+        value = e.target.value;
 
-// Handling the name change
-const handleName = (e) => {
-setName(e.target.value);
-setSubmitted(false);
-};
+        setUser({ ...user, [name]: value });
+    };
 
-// Handling the Department change
-const handleDepartment = (e) => {
-    setDepartment(e.target.value);
-    setSubmitted(false);
-}
-// Handling the PhoneNumber change
-const handlePhoneNumber = (e) => {
-    setPhoneNumber(e.target.value);
-    setSubmitted(false);
-}
+    const PostData = async (e) => {
+        e.preventDefault();
+        const { name, department, phoneNumber, email, password, cpassword } = user;
 
-// Handling the email change
-const handleEmail = (e) => {
-setEmail(e.target.value);
-setSubmitted(false);
-};
+        if (!name || !department || !phoneNumber || !email || !password || !cpassword) {
+            return toast.warning("All fields are mandatory!", {
+                position: toast.POSITION.TOP_CENTER,
+                autoClose: 3000,
+            });
+        }
 
-// Handling the password change
-const handlePassword = (e) => {
-setPassword(e.target.value);
-setSubmitted(false);
-};
+        if (password !== cpassword) {
+            return toast.warning("Password and Confirm Password are not matching!", {
+                position: toast.POSITION.TOP_CENTER,
+                autoClose: 3000,
+            });
+        }
 
-// Handling the form submission
-const handleSubmit = (e) => {
-e.preventDefault();
-if (name === '' || department === '' || phoneNumber === '' || email === '' || password === '') {
-setError(true);
-} else {
-setSubmitted(true);
-setError(false);
-}
-};
+        try {
+            const res = await fetch("api/auth/register", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    name,
+                    department,
+                    phoneNumber,
+                    email,
+                    password,
+                    cpassword,
+                }),
+            });
 
-// Showing success message
-const successMessage = () => {
-return (
-<div
-className="success"
-style={{
-display: submitted ? '' : 'none',
-}}>
-<h1>User {name} successfully registered!!</h1>
-</div>
-);
-};
+            const data = res.json();
 
-// Showing error message if error is true
-const errorMessage = () => {
-return (
-<div
-className="error"
-style={{
-display: error ? '' : 'none',
-}}>
-<h1 className='fill-alert'>Please enter all the fields</h1>
-</div>
-);
-};
+            console.log(data);
 
-return (
-<div className="form">
+            if (data) {
+                navigate("/login");
+                return toast.success("Registration Successful!", {
+                    position: toast.POSITION.TOP_CENTER,
+                    autoClose: 3000,
+                });
+            } else {
+                return toast.error("something went wrong server error", {
+                    position: toast.POSITION.TOP_CENTER,
+                    autoClose: 3000,
+                });
+            }
+        } catch (error) {
+            return toast.error(error.response.data.message, {
+                position: toast.POSITION.TOP_CENTER,
+                autoClose: 3000,
+            });
+        }
+    };
 
+    return (
+        <div className="form">
 
-{/* Calling to the methods */}
-<div className="messages">
-{errorMessage()}
-{successMessage()}
-</div>
+            <form
+                id="register-form"
+                method="POST"
+                autoComplete="off"
+                onSubmit={PostData}>
 
-<form>
-{/* Labels and inputs for form data */}
-<label className="label">Name</label>
-<input onChange={handleName} className="input"
-value={name} type="text" />
+                {/* Labels and inputs for form data */}
+                <label className="label">Name</label>
+                <input onChange={handleInputs} className="input"
+                    value={user.name} type="text" name='name' />
 
- <label className="label">Department</label>
-<input onChange={handleDepartment} className="input"
-value={department} type="text" />
+                <label className="label">Department</label>
+                <input onChange={handleInputs} className="input"
+                    value={user.department} type="text" name='department' />
 
-<label className="label">Phone Number</label>
-<input onChange={handlePhoneNumber} className="input"
-value={phoneNumber} type="text" /> 
+                <label className="label">Phone Number</label>
+                <input onChange={handleInputs} className="input"
+                    value={user.phoneNumber} type="text" name='phoneNumber' />
 
-<label className="label">Email</label>
-<input onChange={handleEmail} className="input"
-value={email} type="email" />
+                <label className="label">Email</label>
+                <input onChange={handleInputs} className="input"
+                    value={user.email} type="email" name='email' />
 
-<label className="label">Password</label>
-<input onChange={handlePassword} className="input"
-value={password} type="password" />
+                <label className="label">Password</label>
+                <input onChange={handleInputs} className="input"
+                    value={user.password} type="password" name='password' />
 
-<button onClick={handleSubmit} className="btn" type="submit">
-Register
-</button>
-</form>
-</div>
-);
+                <label className="label">Confirm Password</label>
+                <input onChange={handleInputs} className="input"
+                    value={user.cpassword} type="password" name='cpassword' />
+
+                <button className="btn" type="submit">
+                    Register
+                </button>
+            </form>
+        </div>
+    );
 }

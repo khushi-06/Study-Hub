@@ -1,6 +1,5 @@
 const connectToMongo = require('./db');
 const express = require('express');
-const bodyParser = require('body-parser');
 var cors = require('cors')
 
 connectToMongo();
@@ -8,16 +7,17 @@ const app = express()
 const port = 5000;
 
 app.use(cors());
-
-app.use(bodyParser.json()); // middleware 
+app.use(express.json());
 
 
 // Import the route files
 const registerRoute = require('./routes/registerRoute')
 const loginRoute = require('./routes/loginRoute');
-// const authRoute = require('./routes/authRoute');
 const getdataRoute = require('./routes/getdataRoute');
 
+app.get('/', (req, res) => {
+  res.send('hello world')
+})
 
 // Use the routes
 app.use('/api/auth', registerRoute);

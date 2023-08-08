@@ -1,7 +1,6 @@
 import Navigation from './navigation'; 
 import Herosection from './herosection';
 import Ourcontent from './ourcontent';
-import Login from './login';
 
 
 const Home=() =>{
@@ -11,7 +10,6 @@ const Home=() =>{
       <Navigation/>
       <Herosection/>
       <Ourcontent/>
-      <Login/>
       </div>
   );
 }
