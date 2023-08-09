@@ -363,3 +363,67 @@ form{
         font-size:medium;
         color: red;
     }
+
+
+    /* MAIN.JSX CSS */
+
+    
+ .vertical-navbar{
+    width: 20%;
+    /* height: 100%; */
+    height: 90vh;
+    position: relative;
+    top: 0vh;
+    left: 0vh;
+    background-color: white;
+    overflow-y: scroll;
+    box-shadow: 0px 4px 7px 0px rgba(0, 0, 0, 0.25);
+ }
+
+ /* Dropdown styles */
+
+.dropdown {
+    max-width: 13em;
+    margin: 80px auto 0;
+    position: relative;
+    width: 100%;
+  }
+  .dropdown-btn {
+    background: #1d1f24;
+    font-size: 18px;
+    width: 100%;
+    border: none;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.7em 0.5em;
+    border-radius: 0.5em;
+    cursor: pointer;
+  }
+  .arrow {
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid #fff;
+    transition: transform ease-in-out 0.3s;
+  }
+  .dropdown-content {
+    list-style: none;
+    position: absolute;
+    top: 3.2em;
+    width: 100%;
+  }
+  .dropdown-content li {
+    background: #2f3238;
+    border-radius: 0.5em;
+  }
+  .dropdown-content li:hover {
+    background: #1d1f24;
+  }
+  .dropdown-content li a {
+    display: block;
+    padding: 0.7em 0.5em;
+    color: #fff;
+    margin: 0.1em 0;
+    text-decoration: none;
+  }
