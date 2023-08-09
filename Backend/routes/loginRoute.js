@@ -1,7 +1,6 @@
 const express = require('express');
 const router = new express.Router();
 const Users = require('../models/user');
-const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 
 router.post('/login',
@@ -30,12 +29,10 @@ router.post('/login',
 
       // create jwt token
       const token = await checkUser.generateAuthToken();
-      console.log(`the token part ${token}`);
 
       res.cookie("jwt", token, {
         expires: new Date(Date.now() + 1800000),
         httpOnly: true,
-        // secure:true
       });
 
       res.status(200).json({
@@ -45,7 +42,7 @@ router.post('/login',
     }
     catch (error) {
       console.error('Error during login:', error);
-      res.status(500).send({
+      res.status(500).json({
         message: "Internal Server Error",
         error: error.message,
       });

@@ -5,7 +5,7 @@ const Authenticate = require("../middleware/authenticate");
 
 
 // data of users
-router.post("/getuser", Authenticate, async (req, res, next) => {
+router.post("/getdata", Authenticate, async (req, res, next) => {
 	try {
 		const userProfile = await Users.findById(req.user.id);
 

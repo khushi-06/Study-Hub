@@ -73,9 +73,9 @@ userSchema.methods.generateAuthToken = async function () {
 };
 
 // storing messages
-userSchema.methods.addMessage = async function (name, email, phone, message) {
+userSchema.methods.addMessage = async function (name, email, phoneNumber, message) {
   try {
-    this.message = this.message.concat({ name, email, phone, message });
+    this.message = this.message.concat({ name, email, phoneNumber, message });
     await this.save();
     return this.message;
   } catch (error) {
