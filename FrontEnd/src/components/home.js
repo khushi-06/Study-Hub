@@ -1,13 +1,14 @@
-import Navigation from './navigation'; 
+
 import Herosection from './herosection';
 import Ourcontent from './ourcontent';
+import Navbar from './Navbar';
 
 
 const Home=() =>{
 
   return(
       <div>
-      <Navigation/>
+      <Navbar/>
       <Herosection/>
       <Ourcontent/>
       </div>

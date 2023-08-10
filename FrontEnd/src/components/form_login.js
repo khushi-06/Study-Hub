@@ -34,7 +34,7 @@ export default function Form() {
                 });
             }
 
-            const res = await axios.post("api/auth/login", userLogin);
+            const res = await axios.post("/api/auth/login", userLogin);
             const data = res.data;
 
             if (data) {

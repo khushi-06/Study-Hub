@@ -14,6 +14,7 @@ app.use(express.json());
 const registerRoute = require('./routes/registerRoute')
 const loginRoute = require('./routes/loginRoute');
 const getdataRoute = require('./routes/getdataRoute');
+const logout = require('./routes/logout');
 
 app.get('/', (req, res) => {
   res.send('hello world')
@@ -23,7 +24,23 @@ app.get('/', (req, res) => {
 app.use('/api/auth', registerRoute);
 app.use('/api/auth', loginRoute);
 app.use('/api/auth', getdataRoute);
+app.use('', logout);
 
-app.listen(port, () => {
-  console.log(`Example app listening on port http://localhost:${port}`)
-})
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send('Something went wrong!');
+});
+
+const server = app.listen(port, () => {
+  console.log(`Example app listening on port http://localhost:${port}`);
+});
+
+process.on('SIGTERM', () => {
+  server.close(() => {
+    console.log('Server is gracefully shutting down.');
+  });
+});
+
+
+
+
