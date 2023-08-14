@@ -14,6 +14,9 @@ const Herosection=()=>{
         <div className="hero">
             <img className="img4" src="/images/Ellipse 4.png" alt=""/>
         </div>
+        <div className="hero">
+            <img className="img4" src="/images/Ellipse 4.png" alt=""/>
+        </div>
 
         <div className="content">
             <p>Elevate Your Studies: </p>

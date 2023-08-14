@@ -88,34 +88,34 @@ export default function Form() {
     return (
         <div className="form">
 
-            <form
+            <form 
                 id="register-form"
                 method="POST"
                 autoComplete="off"
                 onSubmit={PostData}>
 
                 {/* Labels and inputs for form data */}
-                <label className="label">Name</label>
+                <label className="label1">Name</label>
                 <input onChange={handleInputs} className="input"
                     value={user.name} type="text" name='name' />
 
-                <label className="label">Department</label>
+                <label className="label2">Department</label>
                 <input onChange={handleInputs} className="input"
                     value={user.department} type="text" name='department' />
 
-                <label className="label">Phone Number</label>
+                <label className="label3">Phone Number</label>
                 <input onChange={handleInputs} className="input"
                     value={user.phoneNumber} type="text" name='phoneNumber' />
 
-                <label className="label">Email</label>
+                <label className="label4">Email</label>
                 <input onChange={handleInputs} className="input"
                     value={user.email} type="email" name='email' />
 
-                <label className="label">Password</label>
+                <label className="label5">Password</label>
                 <input onChange={handleInputs} className="input"
                     value={user.password} type="password" name='password' />
 
-                <label className="label">Confirm Password</label>
+                <label className="label6">Confirm Password</label>
                 <input onChange={handleInputs} className="input"
                     value={user.cpassword} type="password" name='cpassword' />
 

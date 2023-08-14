@@ -10,8 +10,6 @@ const TextExample=() =>{
       </div>
     </div>
     <div className='card1'>
-    <Card>
-      <Card.Body >
         <Card.Title className='card-title'>FIRST YEAR</Card.Title>
         <hr size="4" width="100%" color="yellow" /> 
         <Card.Text>
@@ -32,14 +30,11 @@ const TextExample=() =>{
           </div>
           
         </Card.Text>
-        {/* <div className="button" href="https://github.com/khushi-06/Study-material">Another Link </div> */}
-      </Card.Body>
-    </Card>
+  
+     
     </div>
 
     <div className='card2'>
-    <Card>
-      <Card.Body >
         <Card.Title className='card-title'>SECOND YEAR</Card.Title>
         <hr size="4" width="100%" color="yellow" /> 
         <Card.Text>
@@ -60,14 +55,9 @@ const TextExample=() =>{
           </div>
           
         </Card.Text>
-        {/* <div className="button" href="https://github.com/khushi-06/Study-material">Another Link </div> */}
-      </Card.Body>
-    </Card>
     </div>
 
     <div className='card3'>
-    <Card>
-      <Card.Body >
         <Card.Title className='card-title'>THIRD YEAR</Card.Title>
         <hr size="4" width="100%" color="yellow" /> 
         <Card.Text>
@@ -88,15 +78,10 @@ const TextExample=() =>{
           </div>
           
         </Card.Text>
-        {/* <div className="button" href="https://github.com/khushi-06/Study-material">Another Link </div> */}
-      </Card.Body>
-    </Card>
     </div>
 
 
     <div className='card4'>
-    <Card>
-      <Card.Body >
         <Card.Title className='card-title'>FOURTH YEAR</Card.Title>
         <hr size="4" width="100%" color="yellow" /> 
         <Card.Text>
@@ -117,9 +102,6 @@ const TextExample=() =>{
           </div>
           
         </Card.Text>
-        {/* <div className="button" href="https://github.com/khushi-06/Study-material">Another Link </div> */}
-      </Card.Body>
-    </Card>
     </div>
 
 
