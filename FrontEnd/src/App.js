@@ -5,6 +5,7 @@ import Register from './components/register';
 import Login from './components/login';
 import Logout from './components/logout';
 import Mainpage from './components/Mainpage';
+import Footer from './components/footer';
 
 
 

@@ -8,6 +8,7 @@ import DropdownComponent4 from "./dropdown4";
 import DropdownComponent5 from "./dropdown5";
 import DropdownComponent6 from "./dropdown6";
 import DropdownComponent7 from "./dropdown7";
+import Footer from "./footer";
 
 
 
@@ -36,8 +37,8 @@ const Maincontent = () => {
         <div className="mainsection">
           <div className="Mcard3" style={{
           background: `url(${imageUrl})`,
-          backgroundSize: 'cover', // Adjust background sizing as needed
-          backgroundPosition: 'center', // Adjust background position as needed
+          backgroundSize: 'cover', 
+          backgroundPosition: 'center', 
         }}>
           </div>
         </div>
@@ -45,8 +46,8 @@ const Maincontent = () => {
         <div className="mainsection">
           <div className="Mcard3" style={{
           background: `url(${imageUrl})`,
-          backgroundSize: 'cover', // Adjust background sizing as needed
-          backgroundPosition: 'center', // Adjust background position as needed
+          backgroundSize: 'cover', 
+          backgroundPosition: 'center', 
         }}>
           </div>
         </div>
@@ -54,12 +55,15 @@ const Maincontent = () => {
         <div className="mainsection">
           <div className="Mcard3" style={{
           background: `url(${imageUrl})`,
-          backgroundSize: 'cover', // Adjust background sizing as needed
-          backgroundPosition: 'center', // Adjust background position as needed
+          backgroundSize: 'cover', 
+          backgroundPosition: 'center', 
         }}>
           </div>
         </div>
         
+      </div>
+      <div>
+        <Footer/>
       </div>
     </div>
   );

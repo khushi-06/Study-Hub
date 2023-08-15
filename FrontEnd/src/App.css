@@ -72,7 +72,7 @@ li{
     font-weight: 600;
     position: absolute;
     top: 241.05px;   /* Y-coordinate position */
-    left: 408.85px;  /* X-coordinate position */
+    left: 517.85px;  /* X-coordinate position */
 
 }
 
@@ -168,11 +168,6 @@ li{
 }
 
 
-.footer{
-    background-color: #FFD700;
-    height: 4rem;
-}
-
 .bar{
     background-color: #FFD700;
     width: 223.792px;
@@ -196,11 +191,13 @@ li{
 
 .loginbox{
     background-color: white;
+    padding: 50px;
+    margin: 50px;
     width: 1224.97px;
     height: 526px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     position: absolute;
-    top: 20vh;   /* Y-coordinate position */
+    top: 5vh;   /* Y-coordinate position */
     left: 22vh;  /* X-coordinate position */
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
     align-items: center;
@@ -525,3 +522,15 @@ form{
     box-shadow: 0px 4px 4px 0px rgba(255, 215, 0, 0.53);
 
 }
+
+.footer {
+    background-color: #FFD700;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 7%;
+  }
+  

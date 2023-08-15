@@ -1,5 +1,6 @@
 import Form from "./form_login";
 import Navbar from './Navbar';
+import Footer from "./footer";
 
 
 const Login =()=>{
@@ -16,6 +17,8 @@ const Login =()=>{
         </div>
         <div className="signin-alert1">Register now and embark on your learning journey!" </div>
         </div>
+
+        <Footer/>
         </div>
         
 

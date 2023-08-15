@@ -1,5 +1,6 @@
 import Navbar from './Navbar';
 import Maincontent from './maincontent';
+import Footer from './footer';
 
 
 
@@ -8,6 +9,7 @@ const Mainpage=()=>{
         <div>
            <Navbar/>
            <Maincontent/>
+           <Footer/>
         </div>
 
 
