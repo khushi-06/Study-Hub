@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 
-function DropdownComponent() {
+function DropdownComponent6() {
   const options = [
-    { value: 'option1', label: 'Option 1' },
-    { value: 'option2', label: 'Option 2' },
-    { value: 'option3', label: 'Option 3' },
+    { value: 'option1', label: 'Software Enginering' },
+    { value: 'option2', label: 'Cryptographic Security System ' },
+    { value: 'option3', label: 'System programming compiler construction' },
+    { value: 'option4', label: 'Internet Programming' },
+    { value: 'option5', label: 'Digital Marketing' },
     // Add more options as needed
   ];
 
@@ -24,7 +26,7 @@ function DropdownComponent() {
     return (
       <div className="dropdown-container">
         <div className="dropdown-header" onClick={toggleDropdown}>
-          {selectedValue ? selectedValue : 'Select an option'}
+          {selectedValue ? selectedValue : 'Semester 06'}
         </div>
         {isOpen && (
           <ul className="dropdown-options">
@@ -49,4 +51,4 @@ function DropdownComponent() {
   );
 }
 
-export default DropdownComponent;
+export default DropdownComponent6;
