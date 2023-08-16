@@ -1,9 +1,9 @@
 {
     "version": 2,
     "builds": [
-       { "src": "./FrontEnd/index.js", "use": "@vercel/node" }
+       { "src": "./FrontEnd/src/index.js", "use": "@vercel/node" }
     ],
     "routes": [
-       { "src": "/(.*)", "dest": "/FrontEnd/index.js" }
+       { "src": "/(.*)", "dest": "/FrontEnd/src/index.js" }
     ]
  }
