@@ -17,7 +17,7 @@ const getdataRoute = require('./routes/getdataRoute');
 const logout = require('./routes/logout');
 
 app.get('/', (req, res) => {
-  res.send('hello world')
+  res.send('Hello your server has been succesfully deployed')
 })
 
 // Use the routes
